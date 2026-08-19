@@ -1,0 +1,18 @@
+# system info ram_up on 2026.05.20.10:51:42
+system_info:
+name,value
+DEVICE,10AS027E4F29E3SG
+DEVICE_FAMILY,Arria 10
+GENERATION_ID,0
+#
+#
+# Files generated for ram_up on 2026.05.20.10:51:42
+files:
+filepath,kind,attributes,module,is_top
+sim/ram_up.vhd,VHDL,CONTAINS_INLINE_CONFIGURATION,ram_up,true
+ram_2port_2000/sim/ram_up_ram_2port_2000_u6dyzda.vhd,VHDL,,ram_up_ram_2port_2000_u6dyzda,false
+#
+# Map from instance-path to kind of module
+instances:
+instancePath,module
+ram_up.ram_2port_0,ram_up_ram_2port_2000_u6dyzda

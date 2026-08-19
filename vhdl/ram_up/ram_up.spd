@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simPackage>
+ <file
+   path="ram_2port_2000/sim/ram_up_ram_2port_2000_u6dyzda.vhd"
+   type="VHDL"
+   library="ram_2port_2000" />
+ <file
+   path="sim/ram_up.vhd"
+   type="VHDL"
+   library="ram_up"
+   hasInlineConfiguration="true" />
+ <topLevel name="ram_up.ram_up" />
+ <deviceFamily name="arria10" />
+</simPackage>

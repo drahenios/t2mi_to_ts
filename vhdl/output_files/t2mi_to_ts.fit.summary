@@ -1,0 +1,17 @@
+Fitter Status : Successful - Thu May 28 11:07:12 2026
+Quartus Prime Version : 19.4.0 Build 64 12/04/2019 Patches 0.39,0.35 SC Pro Edition
+Revision Name : t2mi_to_ts
+Top-level Entity Name : ts_to_t2mi_top
+Family : Arria 10
+Device : 10AS027E4F29E3SG
+Timing Models : Final
+Logic utilization (in ALMs) : 315 / 101,620 ( < 1 % )
+Total registers : 302
+Total pins : 38 / 416 ( 9 % )
+Total virtual pins : 0
+Total block memory bits : 7,488 / 15,360,000 ( < 1 % )
+Total RAM Blocks : 1 / 750 ( < 1 % )
+Total DSP Blocks : 0 / 830 ( 0 % )
+Total HSSI RX channels : 0 / 12 ( 0 % )
+Total HSSI TX channels : 0 / 12 ( 0 % )
+Total PLLs : 0 / 32 ( 0 % )

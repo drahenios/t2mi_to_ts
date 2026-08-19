@@ -1,0 +1,597 @@
+Synthesis report
+Thu May 28 11:05:55 2026
+Quartus Prime Version 19.4.0 Build 64 12/04/2019 Patches 0.39,0.35 SC Pro Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Synthesis Summary
+  2. Synthesis Settings
+  3. Synthesis Source Files Read
+  4. Synthesis IP Cores Summary
+  5. Synthesis Partition Summary
+  6. Source Assignments for t2mi_parser_inst|u0|ram_2port_0|altera_syncram_component|auto_generated|altsyncram1
+  7. Parameter Settings for User Entity Instance: t2mi_parser_inst|u0|ram_2port_0|altera_syncram_component
+  8. Partition "root_partition" Resource Utilization by Entity
+  9. State Machine - ts_parser_inst|s_state
+ 10. State Machine - t2mi_parser_inst|s_state
+ 11. State Machine - t2mi_parser_inst|s_state_ram_rd
+ 12. State Machine - Summary
+ 13. User-Specified and Inferred Latches
+ 14. Registers Removed During Synthesis
+ 15. General Register Statistics for Partition "root_partition"
+ 16. Inverted Register Statistics
+ 17. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 18. Post-Synthesis Netlist Statistics for Partition "root_partition"
+ 19. Synthesis Resource Usage Summary for Partition "root_partition"
+ 20. Synthesis RAM Summary for Partition "root_partition"
+ 21. Synthesis Messages
+
+
+
++---------------------------------------------------------------+
+; Synthesis Summary                                             ;
++-----------------------+---------------------------------------+
+; Synthesis Status      ; Successful - Thu May 28 11:05:55 2026 ;
+; Revision Name         ; t2mi_to_ts                            ;
+; Top-level Entity Name ; ts_to_t2mi_top                        ;
+; Family                ; Arria 10                              ;
++-----------------------+---------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Synthesis Settings                                                                                                        ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                          ; Setting            ; Default Value      ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                          ; 10AS027E4F29E3SG   ;                    ;
+; Top-level entity name                                                           ; ts_to_t2mi_top     ; t2mi_to_ts         ;
+; Family name                                                                     ; Arria 10           ; Cyclone 10 GX      ;
+; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
+; Enable compact report table                                                     ; Off                ; Off                ;
+; Design Assistant include IP blocks                                              ; Off                ; Off                ;
+; Design Assistant limit on reported violations per rule                          ; 500                ; 500                ;
+; Optimization Mode                                                               ; Balanced           ; Balanced           ;
+; Allow Register Merging                                                          ; On                 ; On                 ;
+; Allow Register Duplication                                                      ; On                 ; On                 ;
+; Allow Register Retiming                                                         ; On                 ; On                 ;
+; Allow RAM Retiming                                                              ; Off                ; Off                ;
+; Allow DSP Retiming                                                              ; Off                ; Off                ;
+; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
+; Preserve fewer node names                                                       ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                                   ; Enable             ; Enable             ;
+; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto               ; Auto               ;
+; Safe State Machine                                                              ; Auto               ; Auto               ;
+; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
+; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
+; DSP Block Balancing                                                             ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                 ; On                 ;
+; Power-Up Don't Care                                                             ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
+; Remove Duplicate Registers                                                      ; On                 ; On                 ;
+; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
+; Optimization Technique                                                          ; Balanced           ; Balanced           ;
+; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
+; Auto ROM Replacement                                                            ; On                 ; On                 ;
+; Auto RAM Replacement                                                            ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
+; Strict RAM Replacement                                                          ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                           ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
+; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
+; Power Optimization During Synthesis                                             ; Normal compilation ; Normal compilation ;
+; HDL message level                                                               ; Level2             ; Level2             ;
+; Number of Protected Registers Reported in Synthesis Report                      ; 100                ; 100                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                            ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
+; Block Design Naming                                                             ; Auto               ; Auto               ;
+; SDC constraint protection                                                       ; Off                ; Off                ;
+; Synthesis Effort                                                                ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
+; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
+; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                ; Off                ;
+; Disable DSP Negate Inferencing                                                  ; Off                ; Off                ;
+; Report Parameter Settings                                                       ; On                 ; On                 ;
+; Report Source Assignments                                                       ; On                 ; On                 ;
+; Size of the Latch Report                                                        ; 100                ; 100                ;
+; Enable State Machines Inference                                                 ; On                 ; On                 ;
+; Enable formal verification support during compilation                           ; Off                ; Off                ;
+; Size of the PR Initial Conditions Report                                        ; 15                 ; 15                 ;
+; Report PR Initial Values as Errors                                              ; Off                ; Off                ;
+; Fractal Synthesis                                                               ; Off                ; Off                ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Synthesis Source Files Read                                                                                                                                                                                                                                                                                                                        ;
++-----------------------------------------------------------------------------------------------------------------------------+------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+----------------+----------------------------------+
+; File Name with User-Entered Path                                                                                            ; File Type                    ; File Name with Absolute Path                                                                                                      ; Library        ; MD5                              ;
++-----------------------------------------------------------------------------------------------------------------------------+------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+----------------+----------------------------------+
+; ts_to_t2mi_top.vhd                                                                                                          ; User VHDL File               ; /home/diefre/TFM/projects/DVB-T/scripts/t2mi_analyzer/test_bench/vhdl/ts_to_t2mi_top.vhd                                          ;                ; 645c885aff5caa390c471f4ae87526a0 ;
+; ts_parser.vhd                                                                                                               ; User VHDL File               ; /home/diefre/TFM/projects/DVB-T/scripts/t2mi_analyzer/test_bench/vhdl/ts_parser.vhd                                               ;                ; 8cb0bd72258b46b0a376caf4fc512b3c ;
+; t2mi_parser.vhd                                                                                                             ; User VHDL File               ; /home/diefre/TFM/projects/DVB-T/scripts/t2mi_analyzer/test_bench/vhdl/t2mi_parser.vhd                                             ;                ; 2bdfe20f12b77d0411b33d1b0d026a93 ;
+; ram_up.ip                                                                                                                   ; User File                    ; /home/diefre/TFM/projects/DVB-T/scripts/t2mi_analyzer/test_bench/vhdl/ram_up.ip                                                   ;                ; 52ba20b01de03a44c160b5bd30c3ac37 ;
+; ram_up/ram_2port_2000/synth/ram_up_ram_2port_2000_u6dyzda.v                                                                 ; User Verilog HDL File        ; /home/diefre/TFM/projects/DVB-T/scripts/t2mi_analyzer/test_bench/vhdl/ram_up/ram_2port_2000/synth/ram_up_ram_2port_2000_u6dyzda.v ; ram_2port_2000 ; 71e1a35500ae28c5e116478bf923d196 ;
+; ram_up/synth/ram_up.vhd                                                                                                     ; User VHDL File               ; /home/diefre/TFM/projects/DVB-T/scripts/t2mi_analyzer/test_bench/vhdl/ram_up/synth/ram_up.vhd                                     ; ram_up         ; 2cad859c98216956ec0fbcbc34c6dc22 ;
+; /home/diefre/intelFPGA_pro/19.4/quartus/libraries/megafunctions/altera_syncram.tdf                                          ; Megafunction                 ; /home/diefre/intelFPGA_pro/19.4/quartus/libraries/megafunctions/altera_syncram.tdf                                                ; ram_2port_2000 ; 782bef3446b8e97c456076db5a9736d3 ;
+; cbx.lst                                                                                                                     ; Megafunction                 ; /home/diefre/intelFPGA_pro/19.4/quartus/libraries/megafunctions/cbx.lst                                                           ;                ; 9364e54b3730c324baf217a35ed85425 ;
+; /home/diefre/TFM/projects/DVB-T/scripts/t2mi_analyzer/test_bench/vhdl/tmp-clearbox/t2mi_to_ts/70873/altsyncram_9fa4.tdf     ; Auto-Generated Megafunction  ; /home/diefre/TFM/projects/DVB-T/scripts/t2mi_analyzer/test_bench/vhdl/tmp-clearbox/t2mi_to_ts/70873/altsyncram_9fa4.tdf           ;                ; 41fce64a6268ed155a583a0bbfa630f1 ;
+; /home/diefre/TFM/projects/DVB-T/scripts/t2mi_analyzer/test_bench/vhdl/tmp-clearbox/t2mi_to_ts/70873/altera_syncram_0902.tdf ; Auto-Generated Megafunction  ; /home/diefre/TFM/projects/DVB-T/scripts/t2mi_analyzer/test_bench/vhdl/tmp-clearbox/t2mi_to_ts/70873/altera_syncram_0902.tdf       ;                ; b4209497580c74a5a454097e5961a9d2 ;
++-----------------------------------------------------------------------------------------------------------------------------+------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+----------------+----------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Synthesis IP Cores Summary                                                                                       ;
++-------------------+--------------+---------+--------------+--------------+---------------------+-----------------+
+; Vendor            ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance     ; IP Include File ;
++-------------------+--------------+---------+--------------+--------------+---------------------+-----------------+
+; Intel Corporation ; ram_2port    ; 20.0.0  ; N/A          ; N/A          ; t2mi_parser_inst|u0 ; ram_up.ip       ;
++-------------------+--------------+---------+--------------+--------------+---------------------+-----------------+
+
+
++--------------------------------------------------------------------------------------------+
+; Synthesis Partition Summary                                                                ;
++----------------+----------------+---------+--------------+-------+-------------------------+
+; Partition Name ; Hierarchy Path ; Type    ; Preservation ; Empty ; Partition Database File ;
++----------------+----------------+---------+--------------+-------+-------------------------+
+; root_partition ; |              ; Default ;              ;       ;                         ;
++----------------+----------------+---------+--------------+-------+-------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Source Assignments for t2mi_parser_inst|u0|ram_2port_0|altera_syncram_component|auto_generated|altsyncram1 ;
++---------------------------------+--------------------+------+----------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                           ;
++---------------------------------+--------------------+------+----------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                            ;
++---------------------------------+--------------------+------+----------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: t2mi_parser_inst|u0|ram_2port_0|altera_syncram_component ;
++------------------------------------------------------------+----------------------+-------------------+
+; Parameter Name                                             ; Value                ; Type              ;
++------------------------------------------------------------+----------------------+-------------------+
+; ACF_BLOCK_RAM_AND_MLAB_EQUIVALENT_PAUSED_READ_CAPABILITIES ; DONT CARE            ; Untyped           ;
+; ACF_BLOCK_RAM_AND_MLAB_EQUIVALENT_POWER_UP_CONDITIONS      ; AUTO                 ; Untyped           ;
+; ACF_DISABLE_MLAB_RAM_USE                                   ; FALSE                ; Untyped           ;
+; ACF_IMPLEMENT_MLAB_IN_16_BIT_DEEP_MODE                     ; FALSE                ; Untyped           ;
+; ADDRESS_ACLR_A                                             ; UNUSED               ; Untyped           ;
+; ADDRESS_ACLR_B                                             ; NONE                 ; Untyped           ;
+; ADDRESS_REG_B                                              ; CLOCK1               ; Untyped           ;
+; BYTE_SIZE                                                  ; 8                    ; Untyped           ;
+; BYTEENA_REG_B                                              ; CLOCK1               ; Untyped           ;
+; CLOCK_DUTY_CYCLE_DEPENDENCE                                ; AUTO                 ; Untyped           ;
+; CLOCK_ENABLE_CORE_A                                        ; USE_INPUT_CLKEN      ; Untyped           ;
+; CLOCK_ENABLE_CORE_B                                        ; USE_INPUT_CLKEN      ; Untyped           ;
+; CLOCK_ENABLE_INPUT_A                                       ; BYPASS               ; Untyped           ;
+; CLOCK_ENABLE_INPUT_B                                       ; BYPASS               ; Untyped           ;
+; CLOCK_ENABLE_OUTPUT_A                                      ; NORMAL               ; Untyped           ;
+; CLOCK_ENABLE_OUTPUT_B                                      ; BYPASS               ; Untyped           ;
+; ECC_PIPELINE_STAGE_ENABLED                                 ; FALSE                ; Untyped           ;
+; ENABLE_COHERENT_READ                                       ; FALSE                ; Untyped           ;
+; ENABLE_ECC                                                 ; FALSE                ; Untyped           ;
+; ENABLE_ECC_ENCODER_BYPASS                                  ; FALSE                ; Untyped           ;
+; ENABLE_FORCE_TO_ZERO                                       ; FALSE                ; Untyped           ;
+; ENABLE_RUNTIME_MOD                                         ; NO                   ; Untyped           ;
+; IMPLEMENT_IN_LES                                           ; OFF                  ; Untyped           ;
+; INDATA_REG_B                                               ; CLOCK1               ; Untyped           ;
+; INIT_FILE                                                  ; UNUSED               ; Untyped           ;
+; INIT_FILE_LAYOUT                                           ; PORT_A               ; Untyped           ;
+; init_file_restructured                                     ; UNUSED               ; Untyped           ;
+; INSTANCE_NAME                                              ; UNUSED               ; Untyped           ;
+; LOW_POWER_MODE                                             ; AUTO                 ; Untyped           ;
+; MAXIMUM_DEPTH                                              ; 0                    ; Untyped           ;
+; NUMWORDS_A                                                 ; 935                  ; Signed Integer    ;
+; NUMWORDS_B                                                 ; 935                  ; Signed Integer    ;
+; OPERATION_MODE                                             ; DUAL_PORT            ; Untyped           ;
+; OPTIMIZATION_OPTION                                        ; AUTO                 ; Untyped           ;
+; OUTDATA_ACLR_A                                             ; NONE                 ; Untyped           ;
+; OUTDATA_ACLR_B                                             ; NONE                 ; Untyped           ;
+; OUTDATA_REG_A                                              ; UNREGISTERED         ; Untyped           ;
+; OUTDATA_REG_B                                              ; UNREGISTERED         ; Untyped           ;
+; OUTDATA_SCLR_A                                             ; NONE                 ; Untyped           ;
+; OUTDATA_SCLR_B                                             ; NONE                 ; Untyped           ;
+; POWER_UP_UNINITIALIZED                                     ; FALSE                ; Untyped           ;
+; RAM_BLOCK_TYPE                                             ; AUTO                 ; Untyped           ;
+; RDCONTROL_REG_B                                            ; CLOCK1               ; Untyped           ;
+; RDEN_POWER_OPTIMIZATION                                    ; ON                   ; Untyped           ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS                         ; DONT_CARE            ; Untyped           ;
+; READ_DURING_WRITE_MODE_PORT_A                              ; NEW_DATA_NO_NBE_READ ; Untyped           ;
+; READ_DURING_WRITE_MODE_PORT_B                              ; NEW_DATA_NO_NBE_READ ; Untyped           ;
+; WIDTH_A                                                    ; 8                    ; Signed Integer    ;
+; WIDTH_B                                                    ; 8                    ; Signed Integer    ;
+; WIDTH_BYTEENA_A                                            ; 1                    ; Signed Integer    ;
+; WIDTH_BYTEENA_B                                            ; 1                    ; Untyped           ;
+; WIDTH_ECCENCPARITY                                         ; 8                    ; Untyped           ;
+; WIDTH_ECCSTATUS                                            ; 3                    ; Untyped           ;
+; WIDTHAD2_A                                                 ; 1                    ; Untyped           ;
+; WIDTHAD2_B                                                 ; 1                    ; Untyped           ;
+; WIDTHAD_A                                                  ; 10                   ; Signed Integer    ;
+; WIDTHAD_B                                                  ; 10                   ; Signed Integer    ;
+; CBXI_PARAMETER                                             ; altera_syncram_0902  ; Untyped           ;
++------------------------------------------------------------+----------------------+-------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Partition "root_partition" Resource Utilization by Entity                                                                                                                                                                                                                                       ;
++----------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------+-------------------------------------------------------------------------------------+-------------------------------+----------------+
+; Compilation Hierarchy Node             ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; IOPLLs ; Full Hierarchy Name                                                                 ; Entity Name                   ; Library Name   ;
++----------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------+-------------------------------------------------------------------------------------+-------------------------------+----------------+
+; |                                      ; 531 (1)             ; 265 (0)                   ; 7488              ; 0          ; 0    ; 0            ; 0 (0)  ; |                                                                                   ; ts_to_t2mi_top                ; altera_work    ;
+;    |t2mi_parser_inst|                  ; 403 (403)           ; 191 (191)                 ; 7488              ; 0          ; 0    ; 0            ; 0 (0)  ; t2mi_parser_inst                                                                    ; t2mi_parser                   ; altera_work    ;
+;       |u0|                             ; 0 (0)               ; 0 (0)                     ; 7488              ; 0          ; 0    ; 0            ; 0 (0)  ; t2mi_parser_inst|u0                                                                 ; ram_up                        ; ram_up         ;
+;          |ram_2port_0|                 ; 0 (0)               ; 0 (0)                     ; 7488              ; 0          ; 0    ; 0            ; 0 (0)  ; t2mi_parser_inst|u0|ram_2port_0                                                     ; ram_up_ram_2port_2000_u6dyzda ; ram_2port_2000 ;
+;             |altera_syncram_component| ; 0 (0)               ; 0 (0)                     ; 7488              ; 0          ; 0    ; 0            ; 0 (0)  ; t2mi_parser_inst|u0|ram_2port_0|altera_syncram_component                            ; altera_syncram                ; ram_2port_2000 ;
+;                |auto_generated|        ; 0 (0)               ; 0 (0)                     ; 7488              ; 0          ; 0    ; 0            ; 0 (0)  ; t2mi_parser_inst|u0|ram_2port_0|altera_syncram_component|auto_generated             ; altera_syncram_0902           ; ram_2port_2000 ;
+;                   |altsyncram1|        ; 0 (0)               ; 0 (0)                     ; 7488              ; 0          ; 0    ; 0            ; 0 (0)  ; t2mi_parser_inst|u0|ram_2port_0|altera_syncram_component|auto_generated|altsyncram1 ; altsyncram_9fa4               ; altera_work    ;
+;    |ts_parser_inst|                    ; 127 (127)           ; 74 (74)                   ; 0                 ; 0          ; 0    ; 0            ; 0 (0)  ; ts_parser_inst                                                                      ; ts_parser                     ; altera_work    ;
++----------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------+-------------------------------------------------------------------------------------+-------------------------------+----------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - ts_parser_inst|s_state                                                                                                                                                                                                                                                                   ;
++----------------------------+-------------------------+----------------------------+---------------------------+-----------------+-------------------------+-----------------------+--------------------------+---------------------------+----------------+---------------+---------------+--------------+
+; Name                       ; s_state.t2mi_send_error ; s_state.t2mi_receive_error ; s_state.t2mi_receive_skip ; s_state.payload ; s_state.pointer_section ; s_state.pointer_field ; s_state.adaptation_field ; s_state.adaptation_length ; s_state.cc_afc ; s_state.pid_l ; s_state.pid_h ; s_state.sync ;
++----------------------------+-------------------------+----------------------------+---------------------------+-----------------+-------------------------+-----------------------+--------------------------+---------------------------+----------------+---------------+---------------+--------------+
+; s_state.sync               ; 0                       ; 0                          ; 0                         ; 0               ; 0                       ; 0                     ; 0                        ; 0                         ; 0              ; 0             ; 0             ; 0            ;
+; s_state.pid_h              ; 0                       ; 0                          ; 0                         ; 0               ; 0                       ; 0                     ; 0                        ; 0                         ; 0              ; 0             ; 1             ; 1            ;
+; s_state.pid_l              ; 0                       ; 0                          ; 0                         ; 0               ; 0                       ; 0                     ; 0                        ; 0                         ; 0              ; 1             ; 0             ; 1            ;
+; s_state.cc_afc             ; 0                       ; 0                          ; 0                         ; 0               ; 0                       ; 0                     ; 0                        ; 0                         ; 1              ; 0             ; 0             ; 1            ;
+; s_state.adaptation_length  ; 0                       ; 0                          ; 0                         ; 0               ; 0                       ; 0                     ; 0                        ; 1                         ; 0              ; 0             ; 0             ; 1            ;
+; s_state.adaptation_field   ; 0                       ; 0                          ; 0                         ; 0               ; 0                       ; 0                     ; 1                        ; 0                         ; 0              ; 0             ; 0             ; 1            ;
+; s_state.pointer_field      ; 0                       ; 0                          ; 0                         ; 0               ; 0                       ; 1                     ; 0                        ; 0                         ; 0              ; 0             ; 0             ; 1            ;
+; s_state.pointer_section    ; 0                       ; 0                          ; 0                         ; 0               ; 1                       ; 0                     ; 0                        ; 0                         ; 0              ; 0             ; 0             ; 1            ;
+; s_state.payload            ; 0                       ; 0                          ; 0                         ; 1               ; 0                       ; 0                     ; 0                        ; 0                         ; 0              ; 0             ; 0             ; 1            ;
+; s_state.t2mi_receive_skip  ; 0                       ; 0                          ; 1                         ; 0               ; 0                       ; 0                     ; 0                        ; 0                         ; 0              ; 0             ; 0             ; 1            ;
+; s_state.t2mi_receive_error ; 0                       ; 1                          ; 0                         ; 0               ; 0                       ; 0                     ; 0                        ; 0                         ; 0              ; 0             ; 0             ; 1            ;
+; s_state.t2mi_send_error    ; 1                       ; 0                          ; 0                         ; 0               ; 0                       ; 0                     ; 0                        ; 0                         ; 0              ; 0             ; 0             ; 1            ;
++----------------------------+-------------------------+----------------------------+---------------------------+-----------------+-------------------------+-----------------------+--------------------------+---------------------------+----------------+---------------+---------------+--------------+
+
+
+Encoding Type:  One-Hot
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - t2mi_parser_inst|s_state                                                                                                                                                   ;
++---------------------------+------------------------+-----------------------+---------------------------+---------------+-------------------+------------+--------------------+-------------+
+; Name                      ; s_state.tsp_send_error ; s_state.tsp_send_skip ; s_state.tsp_receive_error ; s_state.crc32 ; s_state.bbpadding ; s_state.up ; s_state.syncd_skip ; s_state.hdr ;
++---------------------------+------------------------+-----------------------+---------------------------+---------------+-------------------+------------+--------------------+-------------+
+; s_state.hdr               ; 0                      ; 0                     ; 0                         ; 0             ; 0                 ; 0          ; 0                  ; 0           ;
+; s_state.syncd_skip        ; 0                      ; 0                     ; 0                         ; 0             ; 0                 ; 0          ; 1                  ; 1           ;
+; s_state.up                ; 0                      ; 0                     ; 0                         ; 0             ; 0                 ; 1          ; 0                  ; 1           ;
+; s_state.bbpadding         ; 0                      ; 0                     ; 0                         ; 0             ; 1                 ; 0          ; 0                  ; 1           ;
+; s_state.crc32             ; 0                      ; 0                     ; 0                         ; 1             ; 0                 ; 0          ; 0                  ; 1           ;
+; s_state.tsp_receive_error ; 0                      ; 0                     ; 1                         ; 0             ; 0                 ; 0          ; 0                  ; 1           ;
+; s_state.tsp_send_skip     ; 0                      ; 1                     ; 0                         ; 0             ; 0                 ; 0          ; 0                  ; 1           ;
+; s_state.tsp_send_error    ; 1                      ; 0                     ; 0                         ; 0             ; 0                 ; 0          ; 0                  ; 1           ;
++---------------------------+------------------------+-----------------------+---------------------------+---------------+-------------------+------------+--------------------+-------------+
+
+
+Encoding Type:  One-Hot
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - t2mi_parser_inst|s_state_ram_rd                                                                                                                                                                  ;
++---------------------------------+---------------------------------+--------------------------------+-------------------------------+-------------------------------+-----------------------+---------------------+
+; Name                            ; s_state_ram_rd.null_pck_payload ; s_state_ram_rd.null_pck_cc_afc ; s_state_ram_rd.null_pck_pid_l ; s_state_ram_rd.null_pck_pid_h ; s_state_ram_rd.rd_pck ; s_state_ram_rd.sync ;
++---------------------------------+---------------------------------+--------------------------------+-------------------------------+-------------------------------+-----------------------+---------------------+
+; s_state_ram_rd.sync             ; 0                               ; 0                              ; 0                             ; 0                             ; 0                     ; 0                   ;
+; s_state_ram_rd.rd_pck           ; 0                               ; 0                              ; 0                             ; 0                             ; 1                     ; 1                   ;
+; s_state_ram_rd.null_pck_pid_h   ; 0                               ; 0                              ; 0                             ; 1                             ; 0                     ; 1                   ;
+; s_state_ram_rd.null_pck_pid_l   ; 0                               ; 0                              ; 1                             ; 0                             ; 0                     ; 1                   ;
+; s_state_ram_rd.null_pck_cc_afc  ; 0                               ; 1                              ; 0                             ; 0                             ; 0                     ; 1                   ;
+; s_state_ram_rd.null_pck_payload ; 1                               ; 0                              ; 0                             ; 0                             ; 0                     ; 1                   ;
++---------------------------------+---------------------------------+--------------------------------+-------------------------------+-------------------------------+-----------------------+---------------------+
+
+
++---------------------------------------------------------------------------------------------+
+; State Machine - Summary                                                                     ;
++---------------------------------+------------------+------------+----------------+----------+
+; Name                            ; Number of States ; Using aclr ; Encoding Style ; Safeness ;
++---------------------------------+------------------+------------+----------------+----------+
+; ts_parser_inst|s_state          ; 12               ; Yes        ; One-Hot        ; Not Safe ;
+; t2mi_parser_inst|s_state        ; 8                ; Yes        ; One-Hot        ; Not Safe ;
+; t2mi_parser_inst|s_state_ram_rd ; 6                ; Yes        ; One-Hot        ; Not Safe ;
++---------------------------------+------------------+------------+----------------+----------+
+
+
++---------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                               ;
++----------------------------------------------------+---------------------+------------------------+
+; Latch Name                                         ; Latch Enable Signal ; Free of Timing Hazards ;
++----------------------------------------------------+---------------------+------------------------+
+; t2mi_parser_inst|tsup_clk_o~1                      ; rst_i               ; yes                    ;
+; Number of user-specified and inferred latches = 1  ;                     ;                        ;
++----------------------------------------------------+---------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++-------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                  ;
++----------------------------------------+--------------------------------------------+
+; Register name                          ; Reason for Removal                         ;
++----------------------------------------+--------------------------------------------+
+; t2mi_parser_inst|ts_clk_rate_out_reg_1 ; Merged with t2mi_parser_inst|s_ts_clk_reg1 ;
+; t2mi_parser_inst|ts_clk_rate_out_reg_2 ; Merged with t2mi_parser_inst|s_ts_clk_reg2 ;
+; Total Number of Removed Registers = 2  ;                                            ;
++----------------------------------------+--------------------------------------------+
+
+
++------------------------------------------------------------+
+; General Register Statistics for Partition "root_partition" ;
++----------------------------------------------+-------------+
+; Statistic                                    ; Value       ;
++----------------------------------------------+-------------+
+; Total registers                              ; 265         ;
+; Number of registers using Synchronous Clear  ; 70          ;
+; Number of registers using Synchronous Load   ; 43          ;
+; Number of registers using Asynchronous Clear ; 239         ;
+; Number of registers using Asynchronous Load  ; 0           ;
+; Number of registers using Clock Enable       ; 228         ;
+; Number of registers using Preset             ; 0           ;
++----------------------------------------------+-------------+
+
+
++------------------------------------------------------+
+; Inverted Register Statistics                         ;
++--------------------------------------------+---------+
+; Inverted Register                          ; Fan out ;
++--------------------------------------------+---------+
+; t2mi_parser_inst|s_cnt_null_pck_payload[2] ; 2       ;
+; t2mi_parser_inst|s_cnt_null_pck_payload[4] ; 2       ;
+; t2mi_parser_inst|s_cnt_null_pck_payload[5] ; 2       ;
+; t2mi_parser_inst|s_cnt_null_pck_payload[7] ; 2       ;
+; t2mi_parser_inst|s_cnt_null_pck_payload[0] ; 2       ;
+; t2mi_parser_inst|s_cnt_null_pck_payload[1] ; 2       ;
+; t2mi_parser_inst|s_cnt_rd_pck[1]           ; 2       ;
+; t2mi_parser_inst|s_cnt_rd_pck[3]           ; 2       ;
+; t2mi_parser_inst|s_cnt_rd_pck[4]           ; 2       ;
+; t2mi_parser_inst|s_cnt_rd_pck[5]           ; 2       ;
+; t2mi_parser_inst|s_cnt_rd_pck[7]           ; 2       ;
+; t2mi_parser_inst|s_cnt_ram_space[9]        ; 2       ;
+; t2mi_parser_inst|s_cnt_ram_space[8]        ; 2       ;
+; t2mi_parser_inst|s_cnt_ram_space[5]        ; 2       ;
+; t2mi_parser_inst|s_cnt_ram_space[7]        ; 2       ;
+; t2mi_parser_inst|s_cnt_ram_space[2]        ; 2       ;
+; t2mi_parser_inst|s_cnt_ram_space[0]        ; 2       ;
+; t2mi_parser_inst|s_cnt_ram_space[1]        ; 2       ;
+; t2mi_parser_inst|s_ram_wraddress[1]        ; 3       ;
+; t2mi_parser_inst|s_ram_wraddress[2]        ; 3       ;
+; t2mi_parser_inst|s_ram_wraddress[5]        ; 3       ;
+; t2mi_parser_inst|s_ram_wraddress[7]        ; 3       ;
+; t2mi_parser_inst|s_ram_wraddress[8]        ; 3       ;
+; t2mi_parser_inst|s_ram_wraddress[9]        ; 4       ;
+; t2mi_parser_inst|s_ram_rdaddress[1]        ; 3       ;
+; t2mi_parser_inst|s_ram_rdaddress[2]        ; 3       ;
+; t2mi_parser_inst|s_ram_rdaddress[5]        ; 3       ;
+; t2mi_parser_inst|s_ram_rdaddress[7]        ; 3       ;
+; t2mi_parser_inst|s_ram_rdaddress[8]        ; 3       ;
+; t2mi_parser_inst|s_ram_rdaddress[9]        ; 3       ;
+; t2mi_parser_inst|s_init                    ; 4       ;
+; t2mi_parser_inst|s_ram_wraddress_upl[1]    ; 1       ;
+; t2mi_parser_inst|s_ram_wraddress_upl[2]    ; 1       ;
+; t2mi_parser_inst|s_ram_wraddress_upl[5]    ; 1       ;
+; t2mi_parser_inst|s_ram_wraddress_upl[7]    ; 1       ;
+; t2mi_parser_inst|s_ram_wraddress_upl[8]    ; 1       ;
+; t2mi_parser_inst|s_ram_wraddress_upl[9]    ; 1       ;
+; t2mi_parser_inst|s_cnt_wr_pck[1]           ; 2       ;
+; t2mi_parser_inst|s_cnt_wr_pck[3]           ; 2       ;
+; t2mi_parser_inst|s_cnt_wr_pck[4]           ; 2       ;
+; t2mi_parser_inst|s_cnt_wr_pck[5]           ; 2       ;
+; t2mi_parser_inst|s_cnt_wr_pck[7]           ; 2       ;
+; t2mi_parser_inst|s_cnt_crc32_bytes[0]      ; 3       ;
+; t2mi_parser_inst|s_cnt_crc32_bytes[1]      ; 2       ;
+; t2mi_parser_inst|s_hdr_index[1]            ; 28      ;
+; t2mi_parser_inst|s_hdr_index[4]            ; 19      ;
+; ts_parser_inst|s_init                      ; 12      ;
+; ts_parser_inst|s_cnt_tsp_byte[5]           ; 2       ;
+; ts_parser_inst|s_cnt_tsp_byte[7]           ; 2       ;
+; ts_parser_inst|s_cnt_tsp_byte[0]           ; 2       ;
+; ts_parser_inst|s_cnt_tsp_byte[1]           ; 2       ;
+; ts_parser_inst|s_cnt_tsp_byte[3]           ; 2       ;
+; ts_parser_inst|s_cnt_tsp_byte[4]           ; 2       ;
+; Total number of inverted registers = 53    ;         ;
++--------------------------------------------+---------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------+
+; 6:1                ; 8 bits    ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; ts_parser_inst|s_cnt_adaptation_length[1] ;
+; 6:1                ; 8 bits    ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; ts_parser_inst|s_cnt_pointer_field[0]     ;
+; 6:1                ; 13 bits   ; 52 LEs        ; 0 LEs                ; 52 LEs                 ; Yes        ; t2mi_parser_inst|s_cnt_dfl_bytes[12]      ;
+; 6:1                ; 13 bits   ; 52 LEs        ; 0 LEs                ; 52 LEs                 ; Yes        ; t2mi_parser_inst|s_cnt_syncd_bytes[4]     ;
+; 6:1                ; 8 bits    ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; t2mi_parser_inst|s_ram_data[7]            ;
+; 6:1                ; 13 bits   ; 52 LEs        ; 13 LEs               ; 39 LEs                 ; Yes        ; t2mi_parser_inst|s_cnt_bbpadding_bytes[1] ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; t2mi_parser_inst|s_ram_rdaddress[3]       ;
+; 7:1                ; 5 bits    ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; ts_parser_inst|s_pid[8]                   ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; t2mi_parser_inst|s_cnt_wr_pck[6]          ;
+; 6:1                ; 4 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; t2mi_parser_inst|s_ram_wraddress[4]       ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; t2mi_parser_inst|tsup_data_o[2]           ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; t2mi_parser_inst|tsup_data_o[5]           ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 6 LEs                ; 18 LEs                 ; Yes        ; ts_parser_inst|s_cnt_tsp_byte[2]          ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; t2mi_parser_inst|s_cnt_crc32_bytes[1]     ;
+; 5:1                ; 6 bits    ; 18 LEs        ; 6 LEs                ; 12 LEs                 ; Yes        ; t2mi_parser_inst|s_ram_rdaddress[1]       ;
+; 6:1                ; 5 bits    ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; t2mi_parser_inst|s_cnt_wr_pck[7]          ;
+; 6:1                ; 6 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; t2mi_parser_inst|s_ram_wraddress[9]       ;
+; 19:1               ; 6 bits    ; 72 LEs        ; 18 LEs               ; 54 LEs                 ; Yes        ; ts_parser_inst|s_cnt_tsp_byte[7]          ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; ts_parser_inst|i509                       ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; ts_parser_inst|i239                       ;
+; 33:1               ; 8 bits    ; 176 LEs       ; 8 LEs                ; 168 LEs                ; No         ; t2mi_parser_inst|i763                     ;
+; 34:1               ; 8 bits    ; 176 LEs       ; 16 LEs               ; 160 LEs                ; No         ; t2mi_parser_inst|i785                     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------+
+
+
++------------------------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Partition "root_partition" ;
++------------------------+-----------------------------------------+
+; Type                   ; Count                                   ;
++------------------------+-----------------------------------------+
+; boundary_port          ; 38                                      ;
+; twentynm_ff            ; 265                                     ;
+;     CLR                ; 31                                      ;
+;     CLR SCLR           ; 5                                       ;
+;     CLR SCLR SLD       ; 1                                       ;
+;     ENA                ; 26                                      ;
+;     ENA CLR            ; 138                                     ;
+;     ENA CLR SCLR       ; 22                                      ;
+;     ENA CLR SCLR SLD   ; 42                                      ;
+; twentynm_lcell_comb    ; 531                                     ;
+;     arith              ; 141                                     ;
+;         1 data inputs  ; 119                                     ;
+;         2 data inputs  ; 13                                      ;
+;         3 data inputs  ; 9                                       ;
+;     extend             ; 5                                       ;
+;         7 data inputs  ; 5                                       ;
+;     normal             ; 385                                     ;
+;         0 data inputs  ; 1                                       ;
+;         1 data inputs  ; 36                                      ;
+;         2 data inputs  ; 58                                      ;
+;         3 data inputs  ; 55                                      ;
+;         4 data inputs  ; 65                                      ;
+;         5 data inputs  ; 102                                     ;
+;         6 data inputs  ; 68                                      ;
+; twentynm_ram_block     ; 8                                       ;
+;                        ;                                         ;
+; Number of carry chains ; 14                                      ;
+; Max carry chain length ; 13                                      ;
+;                        ;                                         ;
+; Max LUT depth          ; 5.00                                    ;
+; Average LUT depth      ; 2.98                                    ;
++------------------------+-----------------------------------------+
+
+
++-----------------------------------------------------------------+
+; Synthesis Resource Usage Summary for Partition "root_partition" ;
++---------------------------------------------+-------------------+
+; Resource                                    ; Usage             ;
++---------------------------------------------+-------------------+
+; Estimate of Logic utilization (ALMs needed) ; 305               ;
+;                                             ;                   ;
+; Combinational ALUT usage for logic          ; 531               ;
+;     -- 7 input functions                    ; 5                 ;
+;     -- 6 input functions                    ; 68                ;
+;     -- 5 input functions                    ; 102               ;
+;     -- 4 input functions                    ; 65                ;
+;     -- <=3 input functions                  ; 291               ;
+;                                             ;                   ;
+; Dedicated logic registers                   ; 265               ;
+;                                             ;                   ;
+; I/O pins                                    ; 38                ;
+; Total MLAB memory bits                      ; 0                 ;
+; Total block memory bits                     ; 7488              ;
+;                                             ;                   ;
+; Total DSP Blocks                            ; 0                 ;
+;     -- [A] Total Fixed Point DSP Blocks     ; 0                 ;
+;     -- [B] Total Floating Point DSP Blocks  ; 0                 ;
+;                                             ;                   ;
+; Maximum fan-out node                        ; clk_i             ;
+; Maximum fan-out                             ; 273               ;
+; Total fan-out                               ; 3184              ;
+; Average fan-out                             ; 3.78              ;
++---------------------------------------------+-------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Synthesis RAM Summary for Partition "root_partition"                                                                                                                                               ;
++------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+------+
+; Name                                                                                           ; Type ; Mode             ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF  ;
++------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+------+
+; t2mi_parser_inst|u0|ram_2port_0|altera_syncram_component|auto_generated|altsyncram1|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 936          ; 8            ; 936          ; 8            ; 7488 ; None ;
++------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+------+
+
+
++--------------------+
+; Synthesis Messages ;
++--------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Synthesis
+    Info: Version 19.4.0 Build 64 12/04/2019 Patches 0.39,0.35 SC Pro Edition
+    Info: Processing started: Thu May 28 11:05:41 2026
+    Info: System process ID: 70873
+Info: Command: quartus_syn --read_settings_files=on --write_settings_files=off t2mi_to_ts -c t2mi_to_ts
+Info: qis_default_flow_script.tcl version: #1
+Info: Initializing Synthesis...
+Info: Project = "t2mi_to_ts"
+Info: Revision = "t2mi_to_ts"
+Info: Analyzing source files
+Info: Elaborating from top-level entity "ts_to_t2mi_top"
+Info (18235): Library search order is as follows: "ram_2port_2000; ram_up". Quartus will look for undefined design units in your libraries in that order. To modify the ordering, please specify a semi-colon separated library list using the assignment LIBRARY_SEARCH_ORDER.
+Info (19337): VHDL info at ts_to_t2mi_top.vhd(5): executing entity "ts_to_t2mi_top" with architecture "rtl" File: /home/diefre/TFM/projects/DVB-T/scripts/t2mi_analyzer/test_bench/vhdl/ts_to_t2mi_top.vhd Line: 5
+Info (19337): VHDL info at ts_parser.vhd(5): executing entity "ts_parser" with architecture "rtl" File: /home/diefre/TFM/projects/DVB-T/scripts/t2mi_analyzer/test_bench/vhdl/ts_parser.vhd Line: 5
+Info (19337): VHDL info at t2mi_parser.vhd(25): executing entity "t2mi_parser" with architecture "rtl" File: /home/diefre/TFM/projects/DVB-T/scripts/t2mi_analyzer/test_bench/vhdl/t2mi_parser.vhd Line: 25
+Info (19337): VHDL info at ram_up.vhd(10): executing entity "ram_up" with architecture "rtl" File: /home/diefre/TFM/projects/DVB-T/scripts/t2mi_analyzer/test_bench/vhdl/ram_up/synth/ram_up.vhd Line: 10
+Info (17560): VHDL info at ram_up.vhd(51): going to verilog side to elaborate module ram_up_ram_2port_2000_u6dyzda_cmp File: /home/diefre/TFM/projects/DVB-T/scripts/t2mi_analyzer/test_bench/vhdl/ram_up/synth/ram_up.vhd Line: 51
+Info (17561): VHDL info at ram_up.vhd(51): back to vhdl to continue elaboration File: /home/diefre/TFM/projects/DVB-T/scripts/t2mi_analyzer/test_bench/vhdl/ram_up/synth/ram_up.vhd Line: 51
+Warning (13796): VHDL Process Statement warning at t2mi_parser.vhd(634): signal "ts_clk_rate_out_reg_1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/diefre/TFM/projects/DVB-T/scripts/t2mi_analyzer/test_bench/vhdl/t2mi_parser.vhd Line: 634
+Warning (16764): VHDL warning at t2mi_parser.vhd(762): incomplete sensitivity list specified; assuming completeness File: /home/diefre/TFM/projects/DVB-T/scripts/t2mi_analyzer/test_bench/vhdl/t2mi_parser.vhd Line: 762
+Info (272008): You have specified 935 odd size of memory words in Altera Syncram IP. Altera Syncram IP does not allow odd size memory words and auto corrected to 936 memory words. File: /home/diefre/TFM/projects/DVB-T/scripts/t2mi_analyzer/test_bench/vhdl/ram_up/ram_2port_2000/synth/ram_up_ram_2port_2000_u6dyzda.v Line: 49
+Info (287000): Assertion information: You have specified 935 odd size of memory words in Altera Syncram IP. Altera Syncram IP does not allow odd size memory words and auto corrected to 936 memory words. File: /home/diefre/TFM/projects/DVB-T/scripts/t2mi_analyzer/test_bench/vhdl/tmp-clearbox/t2mi_to_ts/70873/altera_syncram_0902.tdf Line: 48
+Info: Found 8 design entities
+Info: There are 8 partitions after elaboration.
+Info: Creating instance-specific data models and dissolving soft partitions
+Info (18299): Expanding entity and wildcard assignments.
+Info (18300): Expanded entity and wildcard assignments. Elapsed time: 00:00:00
+Info: found pre-synthesis snapshots for 1 partition(s)
+Info: Synthesizing partition "root_partition"
+Warning (13004): Presettable and clearable registers converted to equivalent circuits with latches. Registers power-up to an undefined state, and DEVCLRn places the registers in an undefined state.
+    Warning (13310): Register "t2mi_parser_inst|tsup_clk_o" is converted into an equivalent circuit using register "t2mi_parser_inst|tsup_clk_o~_emulated" and latch "t2mi_parser_inst|tsup_clk_o~1" File: /home/diefre/TFM/projects/DVB-T/scripts/t2mi_analyzer/test_bench/vhdl/t2mi_parser.vhd Line: 760
+Info (286030): Timing-Driven Synthesis is running
+Critical Warning (18061): Ignored Power-Up Level option on the following registers
+    Critical Warning (18010): Register t2mi_parser_inst|s_ram_wraddress[1] will power up to High File: /home/diefre/TFM/projects/DVB-T/scripts/t2mi_analyzer/test_bench/vhdl/t2mi_parser.vhd Line: 171
+    Critical Warning (18010): Register t2mi_parser_inst|s_ram_wraddress[2] will power up to High File: /home/diefre/TFM/projects/DVB-T/scripts/t2mi_analyzer/test_bench/vhdl/t2mi_parser.vhd Line: 171
+    Critical Warning (18010): Register t2mi_parser_inst|s_ram_wraddress[5] will power up to High File: /home/diefre/TFM/projects/DVB-T/scripts/t2mi_analyzer/test_bench/vhdl/t2mi_parser.vhd Line: 171
+    Critical Warning (18010): Register t2mi_parser_inst|s_ram_wraddress[7] will power up to High File: /home/diefre/TFM/projects/DVB-T/scripts/t2mi_analyzer/test_bench/vhdl/t2mi_parser.vhd Line: 171
+    Critical Warning (18010): Register t2mi_parser_inst|s_ram_wraddress[8] will power up to High File: /home/diefre/TFM/projects/DVB-T/scripts/t2mi_analyzer/test_bench/vhdl/t2mi_parser.vhd Line: 171
+    Critical Warning (18010): Register t2mi_parser_inst|s_ram_wraddress[9] will power up to High File: /home/diefre/TFM/projects/DVB-T/scripts/t2mi_analyzer/test_bench/vhdl/t2mi_parser.vhd Line: 171
+    Critical Warning (18010): Register t2mi_parser_inst|s_ram_rdaddress[1] will power up to High File: /home/diefre/TFM/projects/DVB-T/scripts/t2mi_analyzer/test_bench/vhdl/t2mi_parser.vhd Line: 172
+    Critical Warning (18010): Register t2mi_parser_inst|s_ram_rdaddress[2] will power up to High File: /home/diefre/TFM/projects/DVB-T/scripts/t2mi_analyzer/test_bench/vhdl/t2mi_parser.vhd Line: 172
+    Critical Warning (18010): Register t2mi_parser_inst|s_ram_rdaddress[5] will power up to High File: /home/diefre/TFM/projects/DVB-T/scripts/t2mi_analyzer/test_bench/vhdl/t2mi_parser.vhd Line: 172
+    Critical Warning (18010): Register t2mi_parser_inst|s_ram_rdaddress[7] will power up to High File: /home/diefre/TFM/projects/DVB-T/scripts/t2mi_analyzer/test_bench/vhdl/t2mi_parser.vhd Line: 172
+    Critical Warning (18010): Register t2mi_parser_inst|s_ram_rdaddress[8] will power up to High File: /home/diefre/TFM/projects/DVB-T/scripts/t2mi_analyzer/test_bench/vhdl/t2mi_parser.vhd Line: 172
+    Critical Warning (18010): Register t2mi_parser_inst|s_ram_rdaddress[9] will power up to High File: /home/diefre/TFM/projects/DVB-T/scripts/t2mi_analyzer/test_bench/vhdl/t2mi_parser.vhd Line: 172
+    Critical Warning (18010): Register t2mi_parser_inst|s_ram_wraddress_upl[1] will power up to High File: /home/diefre/TFM/projects/DVB-T/scripts/t2mi_analyzer/test_bench/vhdl/t2mi_parser.vhd Line: 202
+    Critical Warning (18010): Register t2mi_parser_inst|s_ram_wraddress_upl[2] will power up to High File: /home/diefre/TFM/projects/DVB-T/scripts/t2mi_analyzer/test_bench/vhdl/t2mi_parser.vhd Line: 202
+    Critical Warning (18010): Register t2mi_parser_inst|s_ram_wraddress_upl[5] will power up to High File: /home/diefre/TFM/projects/DVB-T/scripts/t2mi_analyzer/test_bench/vhdl/t2mi_parser.vhd Line: 202
+    Critical Warning (18010): Register t2mi_parser_inst|s_ram_wraddress_upl[7] will power up to High File: /home/diefre/TFM/projects/DVB-T/scripts/t2mi_analyzer/test_bench/vhdl/t2mi_parser.vhd Line: 202
+    Critical Warning (18010): Register t2mi_parser_inst|s_ram_wraddress_upl[8] will power up to High File: /home/diefre/TFM/projects/DVB-T/scripts/t2mi_analyzer/test_bench/vhdl/t2mi_parser.vhd Line: 202
+    Critical Warning (18010): Register t2mi_parser_inst|s_ram_wraddress_upl[9] will power up to High File: /home/diefre/TFM/projects/DVB-T/scripts/t2mi_analyzer/test_bench/vhdl/t2mi_parser.vhd Line: 202
+Info (21057): Implemented 629 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 27 input pins
+    Info (21059): Implemented 11 output pins
+    Info (21061): Implemented 583 logic cells
+    Info (21064): Implemented 8 RAM segments
+Info: Successfully synthesized partition
+Info: Saving post-synthesis snapshots for 1 partition(s)
+Info: Quartus Prime Synthesis was successful. 0 errors, 23 warnings
+    Info: Peak virtual memory: 1394 megabytes
+    Info: Processing ended: Thu May 28 11:05:55 2026
+    Info: Elapsed time: 00:00:14
+    Info: System process ID: 70873
+
+

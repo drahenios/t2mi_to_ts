@@ -1,0 +1,252 @@
+Fitter Route Stage Report for t2mi_to_ts
+Thu May 28 11:07:06 2026
+Quartus Prime Version 19.4.0 Build 64 12/04/2019 Patches 0.39,0.35 SC Pro Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Delay Chain Summary
+  3. Routing Usage Summary
+  4. Route Messages
+  5. Estimated Delay Added for Hold Timing Summary
+  6. Estimated Delay Added for Hold Timing Details
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2019  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Delay Chain Summary                                                                                                                                                       ;
++--------------------------+----------+---------------------+--------------------+----------------+-----------------------------------+-------------------------------------+
+; Name                     ; Pin Type ; Input Delay Chain 0 ; Output Delay Chain ; OE Delay Chain ; IO_12_LANE Input Data Delay Chain ; IO_12_LANE Input Strobe Delay Chain ;
++--------------------------+----------+---------------------+--------------------+----------------+-----------------------------------+-------------------------------------+
+; ts_target_pid_received_i ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; tsup_clk_o               ; Output   ; --                  ; 0                  ; 0              ; --                                ; --                                  ;
+; tsup_sync_o              ; Output   ; --                  ; 0                  ; 0              ; --                                ; --                                  ;
+; tsup_valid_o             ; Output   ; --                  ; 0                  ; 0              ; --                                ; --                                  ;
+; tsup_data_o[0]           ; Output   ; --                  ; 0                  ; 0              ; --                                ; --                                  ;
+; tsup_data_o[1]           ; Output   ; --                  ; 0                  ; 0              ; --                                ; --                                  ;
+; tsup_data_o[2]           ; Output   ; --                  ; 0                  ; 0              ; --                                ; --                                  ;
+; tsup_data_o[3]           ; Output   ; --                  ; 0                  ; 0              ; --                                ; --                                  ;
+; tsup_data_o[4]           ; Output   ; --                  ; 0                  ; 0              ; --                                ; --                                  ;
+; tsup_data_o[5]           ; Output   ; --                  ; 0                  ; 0              ; --                                ; --                                  ;
+; tsup_data_o[6]           ; Output   ; --                  ; 0                  ; 0              ; --                                ; --                                  ;
+; tsup_data_o[7]           ; Output   ; --                  ; 0                  ; 0              ; --                                ; --                                  ;
+; rst_i                    ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; clk_i                    ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; ts_clk_i                 ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; ts_valid_i               ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; ts_data_i[0]             ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; ts_data_i[1]             ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; ts_data_i[2]             ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; ts_data_i[3]             ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; ts_data_i[4]             ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; ts_data_i[5]             ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; ts_data_i[6]             ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; ts_data_i[7]             ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; ts_sync_i                ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; ts_target_pid_i[12]      ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; ts_target_pid_i[9]       ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; ts_target_pid_i[10]      ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; ts_target_pid_i[11]      ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; ts_target_pid_i[6]       ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; ts_target_pid_i[7]       ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; ts_target_pid_i[8]       ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; ts_target_pid_i[0]       ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; ts_target_pid_i[1]       ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; ts_target_pid_i[2]       ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; ts_target_pid_i[3]       ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; ts_target_pid_i[4]       ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; ts_target_pid_i[5]       ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
++--------------------------+----------+---------------------+--------------------+----------------+-----------------------------------+-------------------------------------+
+
+
++------------------------------------------------------------+
+; Routing Usage Summary                                      ;
++------------------------------+-----------------------------+
+; Routing Resource Type        ; Usage                       ;
++------------------------------+-----------------------------+
+; Block interconnects          ; 1,120 / 1,101,798 ( < 1 % ) ;
+; C27 interconnects            ; 13 / 19,649 ( < 1 % )       ;
+; C4 interconnects             ; 431 / 794,368 ( < 1 % )     ;
+; Direct links                 ; 535 / 1,101,798 ( < 1 % )   ;
+; Global clocks                ; 2 / 32 ( 6 % )              ;
+; Periphery clocks             ; 0 / 411 ( 0 % )             ;
+; R3 interconnects             ; 221 / 368,832 ( < 1 % )     ;
+; R32 interconnects            ; 3 / 33,367 ( < 1 % )        ;
+; R32/C27 interconnect drivers ; 14 / 115,696 ( < 1 % )      ;
+; R6 interconnects             ; 242 / 731,112 ( < 1 % )     ;
+; Regional clock lefts         ; 0 / 8 ( 0 % )               ;
+; Regional clock out bottoms   ; 0 / 8 ( 0 % )               ;
+; Regional clock out tops      ; 0 / 8 ( 0 % )               ;
+; Regional clock rights        ; 0 / 8 ( 0 % )               ;
+; Regional clocks              ; 0 / 8 ( 0 % )               ;
+; Spine buffers                ; 2 / 308 ( < 1 % )           ;
+; Spine clocks                 ; 2 / 462 ( < 1 % )           ;
+; Spine feedthroughs           ; 0 / 352 ( 0 % )             ;
++------------------------------+-----------------------------+
+
+
++----------------+
+; Route Messages ;
++----------------+
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info: *******************************************************************
+Info: Running Quartus Prime Fitter
+    Info: Version 19.4.0 Build 64 12/04/2019 Patches 0.39,0.35 SC Pro Edition
+    Info: Processing started: Thu May 28 11:05:57 2026
+    Info: System process ID: 70946
+Info: Command: quartus_fit --read_settings_files=on --write_settings_files=off t2mi_to_ts -c t2mi_to_ts
+Info: qfit2_default_script.tcl version: #1
+Info: Project  = t2mi_to_ts
+Info: Revision = t2mi_to_ts
+Info (170193): Fitter routing operations beginning
+Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
+    Info (170201): Optimizations that may affect the design's routability were skipped
+Warning (335093): The Timing Analyzer is analyzing 1 combinational loops as latches. For more details, run the Check Timing command in the Timing Analyzer or view the "User-Specified and Inferred Latches" table in the Synthesis report.
+Info (11888): Total time spent on timing analysis during Routing is 0.23 seconds.
+Info (16607): Fitter routing operations ending: elapsed time is 00:00:18
+
+
++------------------------------------------------------------+
+; Estimated Delay Added for Hold Timing Summary              ;
++-----------------+----------------------+-------------------+
+; Source Clock(s) ; Destination Clock(s) ; Delay Added in ns ;
++-----------------+----------------------+-------------------+
+; clk_i           ; clk_i                ; 30.2              ;
+; I/O             ; clk_i                ; 16.9              ;
+; rst_i           ; clk_i                ; 2.9               ;
++-----------------+----------------------+-------------------+
+Note: For more information on problematic transfers, consider running the Fitter again with the Optimize hold timing option (Settings Menu) turned off.
+This will disable optimization of problematic paths and expose them for further analysis using the Timing Analyzer.
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Estimated Delay Added for Hold Timing Details                                                                                                                                ;
++--------------------------------------------------+-------------------------------------------------------------------------------------------------------+-------------------+
+; Source Register                                  ; Destination Register                                                                                  ; Delay Added in ns ;
++--------------------------------------------------+-------------------------------------------------------------------------------------------------------+-------------------+
+; rst_i                                            ; ts_parser_inst|s_ts_sync_reg1                                                                         ; 2.947             ;
+; t2mi_parser_inst|tsup_clk_o~1                    ; t2mi_parser_inst|tsup_clk_o~_emulated                                                                 ; 2.866             ;
+; t2mi_parser_inst|s_ram_wraddress_upl[7]          ; t2mi_parser_inst|s_ram_wraddress[7]                                                                   ; 0.294             ;
+; t2mi_parser_inst|s_ram_wraddress_upl[5]          ; t2mi_parser_inst|s_ram_wraddress[5]                                                                   ; 0.288             ;
+; t2mi_parser_inst|s_state_ram_rd.sync             ; t2mi_parser_inst|s_state_ram_rd.rd_pck                                                                ; 0.282             ;
+; ts_parser_inst|s_state.pid_h                     ; ts_parser_inst|s_state.pid_l                                                                          ; 0.281             ;
+; ts_parser_inst|s_ts_data_reg1[0]                 ; ts_parser_inst|s_cc_next[1]                                                                           ; 0.279             ;
+; t2mi_parser_inst|s_state_ram_rd.null_pck_pid_l   ; t2mi_parser_inst|s_state_ram_rd.null_pck_cc_afc                                                       ; 0.278             ;
+; ts_parser_inst|s_state.pid_l                     ; ts_parser_inst|s_state.cc_afc                                                                         ; 0.277             ;
+; t2mi_parser_inst|s_state_ram_rd.null_pck_pid_h   ; t2mi_parser_inst|tsup_data_o[3]                                                                       ; 0.273             ;
+; t2mi_parser_inst|s_state_ram_rd.rd_pck           ; t2mi_parser_inst|s_state_ram_rd.sync                                                                  ; 0.263             ;
+; ts_parser_inst|s_state.cc_afc                    ; ts_parser_inst|s_state.adaptation_length                                                              ; 0.256             ;
+; t2mi_parser_inst|s_state_ram_rd.null_pck_payload ; t2mi_parser_inst|tsup_data_o[7]                                                                       ; 0.255             ;
+; t2mi_parser_inst|s_cnt_rd_pck[0]                 ; t2mi_parser_inst|s_flag_ram_space_inc                                                                 ; 0.247             ;
+; t2mi_parser_inst|s_ram_wraddress_upl[3]          ; t2mi_parser_inst|s_ram_wraddress[3]                                                                   ; 0.245             ;
+; t2mi_parser_inst|s_byte[7]                       ; t2mi_parser_inst|s_cnt_payload_len_bytes[12]                                                          ; 0.244             ;
+; t2mi_parser_inst|s_ram_wraddress_upl[6]          ; t2mi_parser_inst|s_ram_wraddress[6]                                                                   ; 0.241             ;
+; ts_parser_inst|s_ts_sync_reg1                    ; ts_parser_inst|s_state.pid_h                                                                          ; 0.241             ;
+; t2mi_parser_inst|s_state.up                      ; t2mi_parser_inst|s_state.bbpadding                                                                    ; 0.241             ;
+; ts_parser_inst|s_state.pointer_section           ; ts_parser_inst|s_init                                                                                 ; 0.240             ;
+; t2mi_parser_inst|s_ram_wraddress_upl[9]          ; t2mi_parser_inst|s_ram_wraddress[9]                                                                   ; 0.236             ;
+; t2mi_parser_inst|s_state.bbpadding               ; t2mi_parser_inst|s_state.crc32                                                                        ; 0.236             ;
+; t2mi_parser_inst|s_ram_wraddress_upl[2]          ; t2mi_parser_inst|s_ram_wraddress[2]                                                                   ; 0.236             ;
+; t2mi_parser_inst|s_ram_rdaddress[0]              ; t2mi_parser_inst|u0|ram_2port_0|altera_syncram_component|auto_generated|altsyncram1|ram_block2a0~reg1 ; 0.234             ;
+; t2mi_parser_inst|s_ts_clk_reg1                   ; t2mi_parser_inst|tsup_clk_o~_emulated                                                                 ; 0.234             ;
+; t2mi_parser_inst|s_ts_data_reg1[5]               ; t2mi_parser_inst|s_ram_data[5]                                                                        ; 0.233             ;
+; t2mi_parser_inst|s_cnt_rd_pck[6]                 ; t2mi_parser_inst|s_flag_ram_space_inc                                                                 ; 0.232             ;
+; t2mi_parser_inst|s_init                          ; t2mi_parser_inst|s_ram_wren                                                                           ; 0.229             ;
+; t2mi_parser_inst|s_cnt_rd_pck[2]                 ; t2mi_parser_inst|s_flag_ram_space_inc                                                                 ; 0.224             ;
+; t2mi_parser_inst|s_ram_wraddress_upl[0]          ; t2mi_parser_inst|s_ram_wraddress[0]                                                                   ; 0.221             ;
+; t2mi_parser_inst|s_ram_wraddress_upl[8]          ; t2mi_parser_inst|s_ram_wraddress[8]                                                                   ; 0.219             ;
+; t2mi_parser_inst|s_ram_wraddress_upl[1]          ; t2mi_parser_inst|s_ram_wraddress[1]                                                                   ; 0.217             ;
+; t2mi_parser_inst|s_cnt_crc32_bytes[0]            ; t2mi_parser_inst|s_cnt_crc32_bytes[1]                                                                 ; 0.211             ;
+; ts_parser_inst|s_ts_data_reg1[6]                 ; ts_parser_inst|s_cnt_adaptation_length[6]                                                             ; 0.210             ;
+; t2mi_parser_inst|s_ts_data_reg1[4]               ; t2mi_parser_inst|s_ram_data[4]                                                                        ; 0.203             ;
+; t2mi_parser_inst|s_state.hdr                     ; t2mi_parser_inst|s_hdr_index[4]                                                                       ; 0.202             ;
+; ts_parser_inst|s_state.sync                      ; ts_parser_inst|s_state.pid_h                                                                          ; 0.199             ;
+; t2mi_parser_inst|s_ram_rdaddress[3]              ; t2mi_parser_inst|u0|ram_2port_0|altera_syncram_component|auto_generated|altsyncram1|ram_block2a0~reg1 ; 0.194             ;
+; t2mi_parser_inst|s_hdr_index[3]                  ; t2mi_parser_inst|tsp_send_error_o                                                                     ; 0.192             ;
+; t2mi_parser_inst|s_ram_rdaddress[6]              ; t2mi_parser_inst|u0|ram_2port_0|altera_syncram_component|auto_generated|altsyncram1|ram_block2a0~reg1 ; 0.191             ;
+; t2mi_parser_inst|s_byte[6]                       ; t2mi_parser_inst|s_cnt_payload_len_bytes[11]                                                          ; 0.184             ;
+; ts_parser_inst|s_state.pointer_field             ; ts_parser_inst|s_state.pointer_section                                                                ; 0.181             ;
+; ts_parser_inst|s_ts_data_reg1[4]                 ; ts_parser_inst|s_cnt_adaptation_length[4]                                                             ; 0.181             ;
+; t2mi_parser_inst|s_ts_data_reg1[2]               ; t2mi_parser_inst|s_byte[2]                                                                            ; 0.181             ;
+; ts_parser_inst|s_ts_data_reg1[3]                 ; ts_parser_inst|s_pid[11]                                                                              ; 0.180             ;
+; t2mi_parser_inst|s_hdr_index[4]                  ; t2mi_parser_inst|s_state.tsp_send_skip                                                                ; 0.173             ;
+; ts_parser_inst|s_ts_data_reg1[7]                 ; ts_parser_inst|s_cnt_adaptation_length[7]                                                             ; 0.171             ;
+; t2mi_parser_inst|s_ts_data_reg1[7]               ; t2mi_parser_inst|s_cnt_payload_len_bytes[4]                                                           ; 0.171             ;
+; ts_parser_inst|s_pusi                            ; ts_parser_inst|s_state.payload                                                                        ; 0.168             ;
+; ts_parser_inst|s_ts_data_reg1[1]                 ; ts_parser_inst|s_pid[9]                                                                               ; 0.166             ;
+; t2mi_parser_inst|s_ram_rdaddress[4]              ; t2mi_parser_inst|u0|ram_2port_0|altera_syncram_component|auto_generated|altsyncram1|ram_block2a0~reg1 ; 0.161             ;
+; t2mi_parser_inst|s_ts_data_reg1[3]               ; t2mi_parser_inst|s_cnt_payload_len_bytes[0]                                                           ; 0.160             ;
+; ts_parser_inst|s_ts_data_reg1[5]                 ; ts_parser_inst|s_cnt_adaptation_length[5]                                                             ; 0.157             ;
+; t2mi_parser_inst|s_state_ram_rd.null_pck_cc_afc  ; t2mi_parser_inst|s_state_ram_rd.null_pck_payload                                                      ; 0.152             ;
+; t2mi_parser_inst|s_cnt_bbpadding_bytes[0]        ; t2mi_parser_inst|s_state.bbpadding                                                                    ; 0.149             ;
+; ts_parser_inst|s_ts_clk_reg1                     ; ts_parser_inst|s_ts_clk_reg2                                                                          ; 0.149             ;
+; t2mi_parser_inst|s_ts_data_reg1[6]               ; t2mi_parser_inst|s_ram_data[6]                                                                        ; 0.141             ;
+; ts_parser_inst|s_state.adaptation_field          ; ts_parser_inst|s_state.payload                                                                        ; 0.132             ;
+; ts_parser_inst|s_ts_data_reg1[2]                 ; ts_parser_inst|s_pid[10]                                                                              ; 0.130             ;
+; t2mi_parser_inst|s_ram_wraddress_upl[4]          ; t2mi_parser_inst|s_ram_wraddress[4]                                                                   ; 0.128             ;
+; t2mi_parser_inst|s_ts_data_reg1[0]               ; t2mi_parser_inst|s_crc8[6]                                                                            ; 0.123             ;
+; ts_parser_inst|s_state.adaptation_length         ; ts_parser_inst|t2mi_send_error_o                                                                      ; 0.095             ;
+; t2mi_parser_inst|s_ts_data_reg1[1]               ; t2mi_parser_inst|s_ram_data[1]                                                                        ; 0.093             ;
+; t2mi_parser_inst|s_ram_data[3]                   ; t2mi_parser_inst|u0|ram_2port_0|altera_syncram_component|auto_generated|altsyncram1|ram_block2a3~reg0 ; 0.077             ;
+; t2mi_parser_inst|s_crc8[6]                       ; t2mi_parser_inst|s_crc8[3]                                                                            ; 0.076             ;
+; ts_parser_inst|s_init                            ; ts_parser_inst|t2mi_run_o                                                                             ; 0.075             ;
+; t2mi_parser_inst|s_ram_data[6]                   ; t2mi_parser_inst|u0|ram_2port_0|altera_syncram_component|auto_generated|altsyncram1|ram_block2a6~reg0 ; 0.073             ;
+; ts_parser_inst|s_ts_valid_reg1                   ; ts_parser_inst|t2mi_run_o                                                                             ; 0.071             ;
+; ts_parser_inst|s_ts_clk_reg2                     ; ts_parser_inst|t2mi_run_o                                                                             ; 0.071             ;
+; t2mi_parser_inst|s_byte[4]                       ; t2mi_parser_inst|s_cnt_payload_len_bytes[9]                                                           ; 0.070             ;
+; t2mi_parser_inst|s_crc8[2]                       ; t2mi_parser_inst|s_crc8[7]                                                                            ; 0.069             ;
+; t2mi_parser_inst|s_byte[5]                       ; t2mi_parser_inst|s_cnt_payload_len_bytes[10]                                                          ; 0.066             ;
+; t2mi_parser_inst|s_hdr_index[1]                  ; t2mi_parser_inst|s_hdr_index[0]                                                                       ; 0.065             ;
+; t2mi_parser_inst|s_ram_data[7]                   ; t2mi_parser_inst|u0|ram_2port_0|altera_syncram_component|auto_generated|altsyncram1|ram_block2a7~reg0 ; 0.063             ;
+; t2mi_parser_inst|s_byte[2]                       ; t2mi_parser_inst|s_cnt_payload_len_bytes[7]                                                           ; 0.063             ;
+; t2mi_parser_inst|s_byte[1]                       ; t2mi_parser_inst|s_cnt_payload_len_bytes[6]                                                           ; 0.062             ;
+; ts_parser_inst|s_state.payload                   ; ts_parser_inst|s_state.payload                                                                        ; 0.059             ;
+; t2mi_parser_inst|s_state.crc32                   ; t2mi_parser_inst|s_hdr_index[4]                                                                       ; 0.057             ;
+; t2mi_parser_inst|s_crc8[5]                       ; t2mi_parser_inst|s_crc8[5]                                                                            ; 0.053             ;
+; t2mi_parser_inst|s_crc8[0]                       ; t2mi_parser_inst|s_crc8[6]                                                                            ; 0.050             ;
+; ts_parser_inst|s_state.t2mi_send_error           ; ts_parser_inst|s_pid[9]                                                                               ; 0.050             ;
+; ts_parser_inst|s_state.t2mi_receive_error        ; ts_parser_inst|s_pid[9]                                                                               ; 0.050             ;
+; ts_parser_inst|s_state.t2mi_receive_skip         ; ts_parser_inst|s_pid[9]                                                                               ; 0.050             ;
+; t2mi_parser_inst|s_state.syncd_skip              ; t2mi_parser_inst|s_cnt_payload_len_bytes[12]                                                          ; 0.048             ;
+; t2mi_parser_inst|s_hdr_index[2]                  ; t2mi_parser_inst|s_hdr_index[0]                                                                       ; 0.045             ;
+; t2mi_parser_inst|s_ram_data[1]                   ; t2mi_parser_inst|u0|ram_2port_0|altera_syncram_component|auto_generated|altsyncram1|ram_block2a1~reg0 ; 0.044             ;
+; t2mi_parser_inst|s_tsp_run_reg1                  ; t2mi_parser_inst|s_state.tsp_send_skip                                                                ; 0.041             ;
+; t2mi_parser_inst|s_ts_valid_reg1                 ; t2mi_parser_inst|s_state.tsp_send_skip                                                                ; 0.041             ;
+; t2mi_parser_inst|s_ts_clk_reg2                   ; t2mi_parser_inst|s_state.tsp_send_skip                                                                ; 0.041             ;
+; t2mi_parser_inst|s_ram_data[0]                   ; t2mi_parser_inst|u0|ram_2port_0|altera_syncram_component|auto_generated|altsyncram1|ram_block2a0~reg0 ; 0.040             ;
+; t2mi_parser_inst|s_cnt_rd_pck[1]                 ; t2mi_parser_inst|s_flag_ram_space_inc                                                                 ; 0.038             ;
+; t2mi_parser_inst|s_cnt_rd_pck[5]                 ; t2mi_parser_inst|s_flag_ram_space_inc                                                                 ; 0.033             ;
+; t2mi_parser_inst|s_flag_ram_space_dec            ; t2mi_parser_inst|s_flag_ram_space_dec                                                                 ; 0.031             ;
+; ts_parser_inst|s_cnt_tsp_byte[4]                 ; ts_parser_inst|s_init                                                                                 ; 0.025             ;
+; ts_parser_inst|s_cnt_tsp_byte[3]                 ; ts_parser_inst|s_init                                                                                 ; 0.025             ;
+; ts_parser_inst|s_cnt_tsp_byte[1]                 ; ts_parser_inst|s_init                                                                                 ; 0.025             ;
+; ts_parser_inst|s_cnt_tsp_byte[0]                 ; ts_parser_inst|s_init                                                                                 ; 0.025             ;
+; ts_parser_inst|s_cnt_tsp_byte[6]                 ; ts_parser_inst|s_init                                                                                 ; 0.025             ;
+; ts_parser_inst|s_cnt_tsp_byte[2]                 ; ts_parser_inst|s_init                                                                                 ; 0.025             ;
+; ts_parser_inst|s_cnt_tsp_byte[7]                 ; ts_parser_inst|s_init                                                                                 ; 0.025             ;
++--------------------------------------------------+-------------------------------------------------------------------------------------------------------+-------------------+
+Note: This table only shows the top 100 path(s) that have the largest delay added for hold.
+
+

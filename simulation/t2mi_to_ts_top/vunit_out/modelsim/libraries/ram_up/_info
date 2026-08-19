@@ -1,0 +1,56 @@
+m255
+K4
+z2
+!s11e vcom 2022.1 2022.01, Jan 29 2022
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/diefre/TFM/projects/DVB-T/scripts/t2mi_analyzer/test_bench/simulacion/ts_to_t2mi_top/vunit_out/modelsim
+Eram_up
+Z1 w1779267102
+Z2 DPx4 ieee 11 numeric_std 0 22 F8@]:i<mFK7<TjIzKcTGi0
+Z3 DPx3 std 6 textio 0 22 LS[?81n5ZHWBI9JkBZTV<2
+Z4 DPx4 ieee 14 std_logic_1164 0 22 6<US`=mgl_dFdCEFF7J=m1
+!i122 0
+R0
+Z5 8/home/diefre/TFM/projects/DVB-T/scripts/t2mi_analyzer/test_bench/vhdl/ram_up/sim/ram_up.vhd
+Z6 F/home/diefre/TFM/projects/DVB-T/scripts/t2mi_analyzer/test_bench/vhdl/ram_up/sim/ram_up.vhd
+l0
+L10 1
+VIRRS5KJfD5H2Qj><llXjG1
+!s100 W7z@2:`_FUGQU<a@DohGE3
+Z7 OL;C;2022.1;75
+32
+Z8 !s110 1779696909
+!i10b 1
+Z9 !s108 1779696909.000000
+Z10 !s90 -reportprogress|300|/home/diefre/TFM/projects/DVB-T/scripts/t2mi_analyzer/test_bench/vhdl/ram_up/sim/ram_up.vhd|-work|ram_up|
+!s107 /home/diefre/TFM/projects/DVB-T/scripts/t2mi_analyzer/test_bench/vhdl/ram_up/sim/ram_up.vhd|
+!i113 0
+Z11 o-work ram_up
+Z12 tExplicit 1 CvgOpt 0
+Artl
+DPx12 altera_lnsim 23 altera_lnsim_components 0 22 ILAnPf>zR?odbCgb^deik2
+DEx14 ram_2port_2000 29 ram_up_ram_2port_2000_u6dyzda 0 22 >;?dXoh:=J70:bFaaI7N[3
+R2
+R3
+R4
+DEx4 work 6 ram_up 0 22 IRRS5KJfD5H2Qj><llXjG1
+!i122 0
+l39
+L23 31
+VUW;;e5z7[=mUk0hjkjFf_2
+!s100 jQG<ZE>1Q_b9aA[@F`<Pn2
+R7
+32
+R8
+!i10b 1
+R9
+R10
+Z13 !s107 /home/diefre/TFM/projects/DVB-T/scripts/t2mi_analyzer/test_bench/vhdl/ram_up/sim/ram_up.vhd|
+!i113 0
+R11
+R12

@@ -1,0 +1,15 @@
+
+WORK > DEFAULT
+DEFAULT:        ./libraries/work/          
+work:           ./libraries/work/          
+ram_2port_2000: ./libraries/ram_2port_2000/
+ram_up:         ./libraries/ram_up/        
+altera:         ./libraries/altera/        
+lpm:            ./libraries/lpm/           
+sgate:          ./libraries/sgate/         
+altera_mf:      ./libraries/altera_mf/     
+altera_lnsim:   ./libraries/altera_lnsim/  
+twentynm:       ./libraries/twentynm/      
+twentynm_hssi:  ./libraries/twentynm_hssi/ 
+twentynm_hip:   ./libraries/twentynm_hip/  
+LIBRARY_SCAN = TRUE

@@ -1,0 +1,81 @@
+-- (C) 2001-2019 Intel Corporation. All rights reserved.
+-- Your use of Intel Corporation's design tools, logic functions and other 
+-- software and tools, and its AMPP partner logic functions, and any output 
+-- files from any of the foregoing (including device programming or simulation 
+-- files), and any associated documentation or information are expressly subject 
+-- to the terms and conditions of the Intel Program License Subscription 
+-- Agreement, Intel FPGA IP License Agreement, or other applicable 
+-- license agreement, including, without limitation, that your use is for the 
+-- sole purpose of programming logic devices manufactured by Intel and sold by 
+-- Intel or its authorized distributors.  Please refer to the applicable 
+-- agreement for further details.
+
+
+
+
+LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+
+LIBRARY altera_lnsim;
+USE altera_lnsim.altera_lnsim_components.all;
+
+ENTITY ram_up_ram_2port_2000_3om6jvi IS
+    PORT
+    (
+        data       : IN STD_LOGIC_VECTOR (7 DOWNTO 0);
+        rdaddress       : IN STD_LOGIC_VECTOR (9 DOWNTO 0);
+        rdclock       : IN STD_LOGIC;
+        rden       : IN STD_LOGIC  := '1';
+        wraddress       : IN STD_LOGIC_VECTOR (9 DOWNTO 0);
+        wrclock       : IN STD_LOGIC  := '1';
+        wren       : IN STD_LOGIC  := '0';
+        q       : OUT STD_LOGIC_VECTOR (7 DOWNTO 0)
+    );
+END ram_up_ram_2port_2000_3om6jvi;
+
+
+ARCHITECTURE SYN OF ram_up_ram_2port_2000_3om6jvi IS
+
+    SIGNAL sub_wire0    : STD_LOGIC_VECTOR (7 DOWNTO 0);
+
+BEGIN
+    q     <= sub_wire0 (7 DOWNTO 0);
+
+    altera_syncram_component : altera_syncram
+    GENERIC MAP (
+            address_aclr_b  => "NONE",
+            address_reg_b  => "CLOCK1",
+            clock_enable_input_a  => "BYPASS",
+            clock_enable_input_b  => "BYPASS",
+            clock_enable_output_b  => "BYPASS",
+            intended_device_family  => "Arria 10",
+            lpm_type  => "altera_syncram",
+            numwords_a  => 935,
+            numwords_b  => 935,
+            operation_mode  => "DUAL_PORT",
+            outdata_aclr_b  => "NONE",
+            outdata_sclr_b  => "NONE",
+            outdata_reg_b  => "CLOCK1",
+            power_up_uninitialized  => "FALSE",
+            rdcontrol_reg_b  => "CLOCK1",
+            widthad_a  => 10,
+            widthad_b  => 10,
+            width_a  => 8,
+            width_b  => 8,
+            width_byteena_a  => 1
+    )
+    PORT MAP (
+        address_a => wraddress,
+        address_b => rdaddress,
+        clock0 => wrclock,
+        clock1 => rdclock,
+        data_a => data,
+        rden_b => rden,
+        wren_a => wren,
+        q_b => sub_wire0
+    );
+
+
+
+END SYN;
+
